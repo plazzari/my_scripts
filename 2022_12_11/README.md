@@ -1,4 +1,5 @@
 # plot for methods section in "Temporal stability and chaos in a complex 0-dimensional marine bio-geochemical model" Occhipinti et al.
+![alt text](https://github.com/plazzari/my_scripts/blob/main/2022_12_11/methods_histograms.png?raw=true)
 Schematic illustrating the approach to analyzing the occurrence of non-
 stationary solutions as a function of the selected parameter. In the example shown,
 the system is controlled by two parameters p1 and p2 with reference values p∗
