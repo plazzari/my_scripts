@@ -9,17 +9,28 @@ def Ch(t,w,Smax,t0):
 w=1.e-06
 Nyears=4.
 Smax=120.
+St=80.
 
 NT=365*int(Nyears)
 
 fig,ax = plt.subplots(1,figsize=(9, 6),gridspec_kw = {'wspace':1.5, 'hspace':1.5})
 
 t0=0.
+t1=1000.
 t=np.arange(t0,365.*Nyears)
 ax.plot(t,Ch(t,w,Smax,t0),c='k',linewidth=4)
+ax.vlines(t1,ymin=0.,ymax=St,colors='g', linestyles='--',linewidth=4)
+
+ax.annotate(r'$n(t^1,S_{MAX})$',
+            xy=(t1,Smax), xycoords='data',
+            xytext=(-10, 10), textcoords='offset points')
+#           arrowprops=dict(facecolor='black', shrink=0.05),
+#           horizontalalignment='center', verticalalignment='bottom')
+ax.scatter(t1,Smax,s=40.,c='k')
+
 ax.set_xlim([0.,NT])
 ax.set_ylim([40.,Smax+Smax/10.])
-ax.set_yticks([80,120])
+ax.set_yticks([St,Smax])
 ax.set_yticklabels([r'$S_T$',r'$S_{MAX}$'])
 ax.set_xticks([])
 ax.set_xlabel('time')
